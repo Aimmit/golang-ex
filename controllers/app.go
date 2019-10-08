@@ -33,6 +33,13 @@ func init() {
 	if err := mysqlDb.Ping(); err != nil {
 		beego.Error(err)
 	}
+	var (
+		title, author, date string
+	)
+	if err := mysqlDb.QueryRow(`select tutorial_title, tutorial_author, submission_date from tutorials_tbl limit 1`).Scan(&title, &author, &date); err != nil {
+		beego.Error(err)
+	}
+	beego.Error(title, author, date)
 	// Initialize language type list.
 	langTypes = strings.Split(beego.AppConfig.String("lang_types"), "|")
 
