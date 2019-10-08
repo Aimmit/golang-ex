@@ -22,6 +22,7 @@ import (
 
 	"github.com/astaxie/beego"
 	"github.com/beego/i18n"
+	_ "github.com/go-sql-driver/mysql"
 
 	"github.com/openshift/golang-ex/controllers"
 )
