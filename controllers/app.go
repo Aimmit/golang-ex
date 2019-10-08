@@ -29,6 +29,7 @@ var langTypes []string // Languages that are supported.
 func init() {
 	mysqlDb, _ := sql.Open("mysql", "root:nRe5xcGpn7XsUkRX@tcp(mysql.db.svc:3306)/sampledb?charset=utf8mb4")
 	mysqlDb.SetConnMaxLifetime(time.Hour)
+	defer mysqlDb.Close()
 	if err := mysqlDb.Ping(); err != nil {
 		beego.Error(err)
 	}
