@@ -1,0 +1,28 @@
+# github.com/Unknwon/goconfig v0.0.0-20180308125533-ef1e4c783f8f
+github.com/Unknwon/goconfig
+# github.com/astaxie/beego v1.10.1
+github.com/astaxie/beego
+github.com/astaxie/beego/config
+github.com/astaxie/beego/context
+github.com/astaxie/beego/context/param
+github.com/astaxie/beego/grace
+github.com/astaxie/beego/logs
+github.com/astaxie/beego/session
+github.com/astaxie/beego/toolbox
+github.com/astaxie/beego/utils
+# github.com/beego/i18n v0.0.0-20161101132742-e9308947f407
+github.com/beego/i18n
+# github.com/go-sql-driver/mysql v1.4.1
+github.com/go-sql-driver/mysql
+# github.com/gorilla/websocket v1.3.0
+github.com/gorilla/websocket
+# github.com/openshift/golang-ex v0.0.0-20190605134944-77d2be637cb7
+github.com/openshift/golang-ex/controllers
+github.com/openshift/golang-ex/models
+# golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2
+golang.org/x/crypto/acme/autocert
+golang.org/x/crypto/acme
+# google.golang.org/appengine v1.6.5
+google.golang.org/appengine/cloudsql
+# gopkg.in/yaml.v2 v2.2.1
+gopkg.in/yaml.v2
