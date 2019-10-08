@@ -15,7 +15,10 @@
 package controllers
 
 import (
+	"database/sql"
+	_ "github.com/go-sql-driver/mysql"
 	"strings"
+	"time"
 
 	"github.com/astaxie/beego"
 	"github.com/beego/i18n"
@@ -24,6 +27,11 @@ import (
 var langTypes []string // Languages that are supported.
 
 func init() {
+	mysqlDb, _ := sql.Open("mysql", "root:nRe5xcGpn7XsUkRX@tcp(mysql.db.svc:3306)/sampledb?charset=utf8mb4")
+	mysqlDb.SetConnMaxLifetime(time.Hour)
+	if err := mysqlDb.Ping(); err != nil {
+		beego.Error(err)
+	}
 	// Initialize language type list.
 	langTypes = strings.Split(beego.AppConfig.String("lang_types"), "|")
 
