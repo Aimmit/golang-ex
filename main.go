@@ -36,7 +36,7 @@ var (
 )
 
 func main() {
-	mysqlDb, _ := sql.Open("mysql", "root:nRe5xcGpn7XsUkRX@tcp(mysql.db.svc:3306)/sampledb?charset=utf8mb4")
+	mysqlDb, _ := sql.Open("mysql", "root:nRe5xcGpn7XsUkRX@tcp(mysql.db:3306)/sampledb?charset=utf8mb4")
 	mysqlDb.SetConnMaxLifetime(time.Hour)
 	defer mysqlDb.Close()
 	if err := mysqlDb.Ping(); err != nil {
