@@ -16,7 +16,9 @@
 package main
 
 import (
+	"database/sql"
 	"os"
+	"time"
 
 	"github.com/astaxie/beego"
 	"github.com/beego/i18n"
@@ -34,6 +36,19 @@ var (
 )
 
 func main() {
+	mysqlDb, _ := sql.Open("mysql", "root:nRe5xcGpn7XsUkRX@tcp(mysql.db.svc:3306)/sampledb?charset=utf8mb4")
+	mysqlDb.SetConnMaxLifetime(time.Hour)
+	defer mysqlDb.Close()
+	if err := mysqlDb.Ping(); err != nil {
+		beego.Error(err)
+	}
+	var (
+		title, author, date string
+	)
+	if err := mysqlDb.QueryRow(`select tutorial_title, tutorial_author, submission_date from tutorials_tbl limit 1`).Scan(&title, &author, &date); err != nil {
+		beego.Error(err)
+	}
+	beego.Error(title, author, date)
 	beego.Info(beego.AppConfig.String("appname"), APP_VER)
 
 	// Register routers.
