@@ -50,6 +50,7 @@ func main() {
 		beego.Error(err)
 	}
 	beego.Error(title, author, date)
+	beego.Error("Success!")
 	beego.Info(beego.AppConfig.String("appname"), APP_VER)
 
 	// Register routers.
